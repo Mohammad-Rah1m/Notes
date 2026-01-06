@@ -14,7 +14,7 @@ const redis = new Redis({
 // Allows 10 requests every 10 seconds per IP address
 const ratelimit = new Ratelimit({
   redis: redis,
-  limiter: Ratelimit.slidingWindow(5, "10 s"),
+  limiter: Ratelimit.slidingWindow(100, "10 s"),
   analytics: true, // Optional: view stats in Upstash console
 });
 
